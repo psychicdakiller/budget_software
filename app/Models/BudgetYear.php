@@ -14,5 +14,6 @@ class BudgetYear extends Model
     	'BudgetYear',
     	'FromDate',
     	'ToDate',
+    	'user_id',
 	];
 }

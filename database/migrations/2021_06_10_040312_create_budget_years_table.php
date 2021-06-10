@@ -19,6 +19,7 @@ class CreateBudgetYearsTable extends Migration
             $table->string('BudgetYear');
             $table->date('FromDate');
             $table->date('ToDate');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

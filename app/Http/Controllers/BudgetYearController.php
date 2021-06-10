@@ -5,12 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\BudgetYear;
 use Datatables;
+use Illuminate\Support\Facades\DB;
 
 class BudgetYearController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $budgetyear = BudgetYear::select('*');
+        // $budgetyear = BudgetYear::select('*');
+        $budgetyear = DB::table('budget_years')
+                    ->leftjoin('users','budget_years.user_id','=','users.id')
+                    ->select('budget_years.*','users.name');
+
         if(request()->ajax()) {
             return datatables()->of($budgetyear)
             ->addColumn('action', 'budgetyears.budget-year-action')

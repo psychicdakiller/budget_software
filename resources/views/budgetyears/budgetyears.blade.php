@@ -20,7 +20,7 @@
 		<div class="card-body">
 			<table class="table table-bordered" id="budget-years">
 				<thead>
-					<tr>
+					<tr class="bg-info text-white">
 						<th>Id</th>
 						<th>Code No</th>
 						<th>Budget Year</th>
@@ -28,6 +28,7 @@
 						<th>To Date</th>
 						<th>Action</th>
 						<th>Updated At</th>
+						<th>Updated By</th>
 					</tr>
 				</thead>
 			</table>
@@ -92,12 +93,13 @@
 			ajax: "{{ url('budget-years') }}",
 			columns: [
 			{ data: 'id', name: 'id' },
-			{ data: 'CodeNo', name: 'CodeNo' },
-			{ data: 'BudgetYear', name: 'BudgetYear' },
-			{ data: 'FromDate', name: 'FromDate' },
-			{ data: 'ToDate', name: 'ToDate' },
+			{ data: 'CodeNo', name: 'budget_years.CodeNo' },
+			{ data: 'BudgetYear', name: 'budget_years.BudgetYear' },
+			{ data: 'FromDate', name: 'budget_years.FromDate' },
+			{ data: 'ToDate', name: 'budget_years.ToDate' },
 			{data: 'action', name: 'action', orderable: false},
-			{ data: 'updated_at', name: 'updated_at' },
+			{ data: 'updated_at', name: 'budget_years.updated_at' },
+			{ data: 'name', name: 'users.name' },
 			],
 			order: [[0, 'desc']]
 		});
