@@ -64,7 +64,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Already registered?<a href="{{ route('login') }}">Sign In</a>
+                        Already registered?<a href="{{ route('login') }}">Login</a>
                     </div>
                 </div>
             </div>
